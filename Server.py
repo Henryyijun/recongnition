@@ -6,7 +6,6 @@ PORT = 8080
 
 
 class Server(socketserver.BaseRequestHandler):
-
     def handle(self):
         try:
             while True:

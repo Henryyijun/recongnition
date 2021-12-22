@@ -9,12 +9,14 @@ import screen_capture
 import numpy
 import cv2
 import numpy as np
-
- 
-
+from Server import Server
+import socketserver
+import threading
 
 class MainWindow(QMainWindow):
     def __init__(self):
+        self.IP = '127.0.0.1'
+        self.PORT = 8080
         QWidget.__init__(self)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
@@ -23,6 +25,11 @@ class MainWindow(QMainWindow):
         self.kernel = np.array([[-1, -1, -1], [-1, 9, -1], [-1, -1, -1]], np.float32)
         self.item = None
         self.scene = QGraphicsScene(self)
+
+        self.server = socketserver.ThreadingTCPServer((self.IP, self.PORT), Server)
+        threading.Thread(target=self.server.serve_forever).start()
+
+
 
     @pyqtSlot()
     def on_pushButton_clicked(self):
@@ -108,3 +115,6 @@ class MainWindow(QMainWindow):
         self.scene.update()
         # self.ui.graphicsView.fitInView(QGraphicsPixmapItem(pix))
         # self.ui.graphicsView.show()
+
+    def send_txts(self, txts):
+        pass

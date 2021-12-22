@@ -1,7 +1,6 @@
 import socket
 
-client=socket.socket()
-
+client = socket.socket()
 client.connect(('localhost', 8080))
 while True:
     cmd = input("(quit退出)>>").strip()
