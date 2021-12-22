@@ -1,8 +1,7 @@
 from PyQt5.QtGui import QPixmap, QImage
-from PyQt5.QtCore import pyqtSlot
+from PyQt5.QtCore import pyqtSlot, QRectF,Qt
 from PyQt5.QtWidgets import QWidget, QGraphicsPixmapItem, QGraphicsScene
 from PyQt5.QtWidgets import QMainWindow
-
 from Ui_mainwindow import Ui_MainWindow
 from paddleocr import PaddleOCR
 from PIL import ImageGrab
@@ -20,10 +19,8 @@ class MainWindow(QMainWindow):
         self.bbox = None
         self.ocr = PaddleOCR(use_angle_cls=True, lang='en')
         self.kernel = np.array([[-1, -1, -1], [-1, 9, -1], [-1, -1, -1]], np.float32)
-        self.image = None
         self.item = None
-        self.scene = None
-
+        self.scene = QGraphicsScene(self)
 
     @pyqtSlot()
     def on_pushButton_clicked(self):
@@ -33,17 +30,19 @@ class MainWindow(QMainWindow):
 
     @pyqtSlot()
     def on_pushButton_2_clicked(self):
-        result = self.recognition()
-        str = ''
-        for i in result:
-            str += i
-
-        self.ui.lineEdit.setText(str)
-        self.show_image()
+        result, img = self.recognition()
+        if result is not None and img is not None:
+            str = ''
+            for i in result:
+                str += i
+            self.ui.lineEdit.setText(str)
+            self.show_image(img)
+        else:
+            print('还未框选')
 
     @pyqtSlot()
     def on_pushButton_3_clicked(self):
-        print('停止识别')
+        self.bbox = None
 
 
     @pyqtSlot()
@@ -52,7 +51,7 @@ class MainWindow(QMainWindow):
 
     @pyqtSlot()
     def on_pushButton_5_clicked(self):
-        print('返回')
+        pass
 
     def get_box(self, begin, end):
         x1, y1 = begin.x(), begin.y()
@@ -60,13 +59,13 @@ class MainWindow(QMainWindow):
         self.bbox = (x1, y1, x2, y2)
 
     def recognition(self):
+        txts = None
+        img_rbg = None
         if self.bbox is not None:
-
             try:
                 img = ImageGrab.grab(self.bbox)
-                self.image = cv2.cvtColor(numpy.asarray(img))
+                img_rbg = numpy.asarray(img)
                 img = cv2.cvtColor(numpy.asarray(img), cv2.COLOR_RGB2GRAY)
-
                 img = cv2.medianBlur(img, 3)
                 img = cv2.filter2D(img, -1, kernel=self.kernel)
                 # # ret, img = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
@@ -82,18 +81,25 @@ class MainWindow(QMainWindow):
                 print(e)
         else:
             print('未框选')
-            pass
-            # need to complete
-        return txts
 
-    def show_image(self):
-        height = self.image.shape[1]
-        width = self.image.shape[0]
-        frame = QImage(self.image, height, width, QImage.Format_RGB888)
-        pix = QPixmap.fromImage(frame)
+            # need to complete
+        return txts, img_rbg
+
+    def show_image(self, image):
+
+        width = image.shape[1]
+        height = image.shape[0]
+        self.scene.clear()
+        #width = 400
+        #height = 200
+        print(type(image))
+        print(image.shape)
+
+        frame = QImage(image, width, height, QImage.Format_RGB888)
+        pix = QPixmap(frame)
         self.item = QGraphicsPixmapItem(pix)
-        self.scene = QGraphicsScene()  # 创建场景
         self.scene.addItem(self.item)
-        self.graphicsView.setScene(self.scene)
-        self.graphicsView.fitInView(QGraphicsPixmapItem(pix))
-        self.graphicsView.show()
+        self.ui.graphicsView.setScene(self.scene)
+        self.scene.update()
+        # self.ui.graphicsView.fitInView(QGraphicsPixmapItem(pix))
+        # self.ui.graphicsView.show()
