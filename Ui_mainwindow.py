@@ -30,9 +30,9 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.label_2, 3, 1, 1, 1)
 
         self.graphicsView = QtWidgets.QGraphicsView(self.centralwidget)
-        self.graphicsView.setGeometry(QtCore.QRect(200, 200, 1000, 1000))  # 左上角 width height
-        self.graphicsView.setSizeIncrement(QtCore.QSize(0, 0))
-        self.graphicsView.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.graphicsView.setGeometry(QtCore.QRect(0, 0, 400, 300))  # 左上角 width height
+        # self.graphicsView.setSizeIncrement(QtCore.QSize(0, 0))
+        # self.graphicsView.setFrameShadow(QtWidgets.QFrame.Raised)
         # self.graphicsView.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContentsOnFirstShow)
         # self.graphicsView.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.graphicsView.setObjectName("graphicsView")

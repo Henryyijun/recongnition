@@ -4,11 +4,13 @@ from PyQt5.QtWidgets import QWidget, QGraphicsPixmapItem, QGraphicsScene
 from PyQt5.QtWidgets import QMainWindow
 from Ui_mainwindow import Ui_MainWindow
 from paddleocr import PaddleOCR
-from PIL import ImageGrab
+from PIL import ImageGrab,Image
 import screen_capture
 import numpy
 import cv2
 import numpy as np
+
+ 
 
 
 class MainWindow(QMainWindow):
@@ -90,13 +92,16 @@ class MainWindow(QMainWindow):
         width = image.shape[1]
         height = image.shape[0]
         self.scene.clear()
+        self.ui.graphicsView.clearFocus()
         #width = 400
         #height = 200
         print(type(image))
         print(image.shape)
-
-        frame = QImage(image, width, height, QImage.Format_RGB888)
-        pix = QPixmap(frame)
+        
+        #frame = QImage(image, width, height, QImage.Format.Format_RGB666)
+        im = Image.fromarray(image)
+        pix = im.toqpixmap()
+        #pix = QPixmap(frame)
         self.item = QGraphicsPixmapItem(pix)
         self.scene.addItem(self.item)
         self.ui.graphicsView.setScene(self.scene)
