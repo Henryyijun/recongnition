@@ -9,8 +9,7 @@ import screen_capture
 import numpy
 import cv2
 import numpy as np
-from Server import Server
-import socketserver
+import socket
 import threading
 
 class MainWindow(QMainWindow):
@@ -26,10 +25,8 @@ class MainWindow(QMainWindow):
         self.item = None
         self.scene = QGraphicsScene(self)
 
-        self.server = socketserver.ThreadingTCPServer((self.IP, self.PORT), Server)
-        threading.Thread(target=self.server.serve_forever).start()
-
-
+        self.client = socket.socket()
+        self.client.connect(('localhost', 8080))
 
     @pyqtSlot()
     def on_pushButton_clicked(self):
@@ -56,7 +53,10 @@ class MainWindow(QMainWindow):
 
     @pyqtSlot()
     def on_pushButton_4_clicked(self):
-        print('send')
+        txt = self.ui.lineEdit.text()
+        print(txt)
+        self.send_texts(txt)
+
 
     @pyqtSlot()
     def on_pushButton_5_clicked(self):
@@ -95,13 +95,12 @@ class MainWindow(QMainWindow):
         return txts, img_rbg
 
     def show_image(self, image):
-
         width = image.shape[1]
         height = image.shape[0]
         self.scene.clear()
         self.ui.graphicsView.clearFocus()
-        #width = 400
-        #height = 200
+        # width = 400
+        # height = 200
         print(type(image))
         print(image.shape)
         
@@ -116,5 +115,7 @@ class MainWindow(QMainWindow):
         # self.ui.graphicsView.fitInView(QGraphicsPixmapItem(pix))
         # self.ui.graphicsView.show()
 
-    def send_txts(self, txts):
-        pass
+    def send_texts(self, text):
+        self.client.send(text.encode())
+        cmd_res = self.client.recv(1024)
+        print(cmd_res.decode())
