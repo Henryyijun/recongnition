@@ -1,6 +1,0 @@
-2021-12-14 14:23:45,979 - E:/pythonProject/MyLogger.py[line:37] - INFO: This is a info
-2021-12-14 14:23:58,202 - E:/pythonProject/MyLogger.py[line:37] - INFO: This is a info
-2021-12-14 14:25:00,420 - E:/pythonProject/MyLogger.py[line:37] - INFO: This is a info
-2021-12-14 14:25:00,421 - E:/pythonProject/MyLogger.py[line:41] - INFO: This is a another info
-2021-12-14 14:26:04,969 - E:/pythonProject/MyLogger.py[line:37] - INFO: This is a info
-2021-12-14 14:26:04,969 - E:/pythonProject/MyLogger.py[line:41] - INFO: This is a another info

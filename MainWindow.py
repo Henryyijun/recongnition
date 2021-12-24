@@ -1,5 +1,4 @@
-from PyQt5.QtGui import QPixmap, QImage
-from PyQt5.QtCore import pyqtSlot, QRectF,Qt
+from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtWidgets import QWidget, QGraphicsPixmapItem, QGraphicsScene
 from PyQt5.QtWidgets import QMainWindow
 from Ui_mainwindow import Ui_MainWindow
@@ -10,13 +9,15 @@ import numpy
 import cv2
 import numpy as np
 import socket
+from MyLogger import MyLogger
 import threading
+
 
 class MainWindow(QMainWindow):
     def __init__(self):
+        QWidget.__init__(self)
         self.IP = '127.0.0.1'
         self.PORT = 8080
-        QWidget.__init__(self)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.bbox = None
@@ -24,12 +25,9 @@ class MainWindow(QMainWindow):
         self.kernel = np.array([[-1, -1, -1], [-1, 9, -1], [-1, -1, -1]], np.float32)
         self.item = None
         self.scene = QGraphicsScene(self)
-        try:
-            self.client = socket.socket()
-            # self.client.connect(('localhost', 8080))
-            self.client.connect((self.IP, self.PORT))
-        except Exception:
-            print("寄")
+        self.log = MyLogger('MainWindowLog.txt')
+        self.client = None
+        threading.Thread(target=self.create_client).start()
 
     @pyqtSlot()
     def on_pushButton_clicked(self):
@@ -39,6 +37,10 @@ class MainWindow(QMainWindow):
 
     @pyqtSlot()
     def on_pushButton_2_clicked(self):
+        '''
+        识别按钮
+        :return:
+        '''
         result, img = self.recognition()
         if result is not None and img is not None:
             str = ''
@@ -47,22 +49,32 @@ class MainWindow(QMainWindow):
             self.ui.lineEdit.setText(str)
             self.show_image(img)
         else:
-            print('还未框选')
+            self.log.logger.info('识别错误，用户未框选')
 
     @pyqtSlot()
     def on_pushButton_3_clicked(self):
+        '''
+        停止识别按钮
+        :return:
+        '''
         self.bbox = None
 
 
     @pyqtSlot()
     def on_pushButton_4_clicked(self):
+        '''
+        发送按钮
+        :return:
+        '''
         txt = self.ui.lineEdit.text()
-        print(txt)
         self.send_texts(txt)
-
 
     @pyqtSlot()
     def on_pushButton_5_clicked(self):
+        '''
+        返回登录按钮
+        :return:
+        '''
         pass
 
     def get_box(self, begin, end):
@@ -106,8 +118,6 @@ class MainWindow(QMainWindow):
         # height = 200
         print(type(image))
         print(image.shape)
-        
-        #frame = QImage(image, width, height, QImage.Format.Format_RGB666)
         im = Image.fromarray(image)
         pix = im.toqpixmap()
         #pix = QPixmap(frame)
@@ -119,7 +129,16 @@ class MainWindow(QMainWindow):
         # self.ui.graphicsView.show()
 
     def send_texts(self, text):
-        if text is not None:
-            self.client.send(text.encode())
-        cmd_res = self.client.recv(1024)
-        print(cmd_res.decode())
+        try:
+            if text is not None:
+                self.client.send(text.encode())
+        except Exception as e:
+            self.log.logger.info('发送失败, 服务器可能未创建或者客户端连接失败')
+
+    def create_client(self):
+        try:
+            self.client = socket.socket()
+            self.client.connect((self.IP, self.PORT))
+            self.log
+        except Exception:
+            self.log.logger.info('服务器Ip: ' + str(self.IP) + ' 服务器Port: ' + str(self.PORT) + ' 连接超时!')

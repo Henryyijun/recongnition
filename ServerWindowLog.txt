@@ -1,0 +1,12 @@
+2021-12-24 19:21:07,300 - E:\pythonProject\ServerWindow.py[line:28] - INFO: before handle,连接建立：('127.0.0.1', 62565)
+2021-12-24 19:21:22,801 - E:\pythonProject\ServerWindow.py[line:23] - INFO: ('127.0.0.1', 62565)连接断开
+2021-12-24 19:21:22,801 - E:\pythonProject\ServerWindow.py[line:31] - INFO: finish run  after handle
+2021-12-24 19:25:37,968 - E:\pythonProject\ServerWindow.py[line:28] - INFO: before handle,连接建立：('127.0.0.1', 62671)
+2021-12-24 19:28:35,479 - E:\pythonProject\ServerWindow.py[line:31] - INFO: finish run  after handle
+2021-12-24 19:29:37,414 - E:\pythonProject\ServerWindow.py[line:28] - INFO: before handle,连接建立：('127.0.0.1', 62687)
+2021-12-24 19:32:26,481 - E:\pythonProject\ServerWindow.py[line:23] - INFO: ('127.0.0.1', 62687)连接断开
+2021-12-24 19:32:26,482 - E:\pythonProject\ServerWindow.py[line:31] - INFO: finish run  after handle
+2021-12-24 19:37:51,720 - E:\pythonProject\ServerWindow.py[line:30] - INFO: before handle,连接建立：('127.0.0.1', 62789)
+2021-12-24 19:38:08,790 - E:\pythonProject\ServerWindow.py[line:51] - INFO: b'except Exception as eLog.Logger.info(str(self.c1finallyself.request.cLose('显示失败
+2021-12-24 19:41:31,550 - E:\pythonProject\ServerWindow.py[line:25] - INFO: ('127.0.0.1', 62789)连接断开
+2021-12-24 19:41:31,551 - E:\pythonProject\ServerWindow.py[line:33] - INFO: finish run  after handle
