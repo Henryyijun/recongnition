@@ -24,9 +24,12 @@ class MainWindow(QMainWindow):
         self.kernel = np.array([[-1, -1, -1], [-1, 9, -1], [-1, -1, -1]], np.float32)
         self.item = None
         self.scene = QGraphicsScene(self)
-
-        self.client = socket.socket()
-        self.client.connect(('localhost', 8080))
+        try:
+            self.client = socket.socket()
+            # self.client.connect(('localhost', 8080))
+            self.client.connect((self.IP, self.PORT))
+        except Exception:
+            print("寄")
 
     @pyqtSlot()
     def on_pushButton_clicked(self):
@@ -116,6 +119,7 @@ class MainWindow(QMainWindow):
         # self.ui.graphicsView.show()
 
     def send_texts(self, text):
-        self.client.send(text.encode())
+        if text is not None:
+            self.client.send(text.encode())
         cmd_res = self.client.recv(1024)
         print(cmd_res.decode())
