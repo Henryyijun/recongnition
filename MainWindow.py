@@ -10,6 +10,8 @@ import cv2
 import numpy as np
 import socket
 from MyLogger import MyLogger
+from PyQt5.QtCore import Qt
+from PyQt5.QtNetwork import QTcpSocket, QHostAddress
 import threading
 
 
@@ -26,8 +28,19 @@ class MainWindow(QMainWindow):
         self.item = None
         self.scene = QGraphicsScene(self)
         self.log = MyLogger('MainWindowLog.txt')
-        self.client = None
-        threading.Thread(target=self.create_client).start()
+        self.sock = QTcpSocket(self)
+        self.sock.connectToHost(QHostAddress.LocalHost, self.PORT)
+
+    def write_data_slot(self):
+
+        message = self.ui.lineEdit.text()
+        print('Client: {}'.format(message))
+        datagram = message.encode()
+        try:
+            self.sock.write(datagram)
+        except Exception:
+            self.log.logger.error("write_data_slot：寄")
+
 
     @pyqtSlot()
     def on_pushButton_clicked(self):
@@ -66,8 +79,9 @@ class MainWindow(QMainWindow):
         发送按钮
         :return:
         '''
-        txt = self.ui.lineEdit.text()
-        self.send_texts(txt)
+        # txt = self.ui.lineEdit.text()
+        # self.send_texts(txt)
+        self.write_data_slot()
 
     @pyqtSlot()
     def on_pushButton_5_clicked(self):

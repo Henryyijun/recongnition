@@ -78,6 +78,7 @@ class Ui_ServerWindow(object):
         self.gridLayout_3.addWidget(self.label_4, 1, 0, 1, 1)
         self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
         self.textEdit.setObjectName("textEdit")
+        self.textEdit.setReadOnly(True)  # 设置为只读，即可以在代码中向textEdit里面输入，但不能从界面上输入
         self.gridLayout_3.addWidget(self.textEdit, 2, 0, 1, 1)
         ServerWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(ServerWindow)
