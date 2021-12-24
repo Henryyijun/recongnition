@@ -31,3 +31,4 @@
 2021-12-24 21:38:24,673 - E:\work_place\recongnition\ServerWindow.py[line:106] - ERROR: read_data_slot2: 寄
 2021-12-24 21:39:29,705 - E:\work_place\recongnition\ServerWindow.py[line:98] - ERROR: read_data_slot1: 寄
 2021-12-24 21:39:29,708 - E:\work_place\recongnition\ServerWindow.py[line:107] - ERROR: read_data_slot2: 寄
+2021-12-24 21:55:52,186 - E:\work_place\recongnition\ServerWindow.py[line:106] - ERROR: read_data_slot2: 寄

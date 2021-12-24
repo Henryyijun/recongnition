@@ -8,8 +8,9 @@ from MyLogger import MyLogger
 from PyQt5.QtNetwork import QTcpServer, QHostAddress
 import json
 import requests
-
+import datetime
 log = MyLogger('ServerWindowLog.txt')
+
 
 
 # class Server(socketserver.BaseRequestHandler):
@@ -100,7 +101,8 @@ class ServerWindow(QMainWindow):
                 # new_datagram = answer.encode()
                 #sock.write(new_datagram)
                 print(message)
-                self.ui.textEdit.append(message)
+                dt = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                self.ui.textEdit.append('[' + dt + ']: ' + message)
             except Exception:
                 log.logger.error("read_data_slot2: 寄")
 
