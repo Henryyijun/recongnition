@@ -10,9 +10,8 @@ import cv2
 import numpy as np
 import socket
 from MyLogger import MyLogger
-from PyQt5.QtCore import Qt
 from PyQt5.QtNetwork import QTcpSocket, QHostAddress
-
+import datetime
 from LoginWindow import LoginWindow
 
 
@@ -26,9 +25,8 @@ class MainWindow(QMainWindow):
         self.kernel = np.array([[-1, -1, -1], [-1, 9, -1], [-1, -1, -1]], np.float32)
         self.item = None
         self.scene = QGraphicsScene(self)
-        self.log = MyLogger('MainWindowLog.txt')
+        self.log = MyLogger('MainWindowLog' + datetime.datetime.now().strftime('%Y-%m-%d') + '.log')
         self.sock = QTcpSocket(self)
-        # self.sock.connectToHost(QHostAddress.LocalHost, self.PORT)
         self.Login_window = LoginWindow()
         self.Login_window.IP_signal.connect(self.connect_to_host)
         self.Login_window.show()
@@ -42,11 +40,10 @@ class MainWindow(QMainWindow):
             self.show()
             self.Login_window.close()
         except Exception:
-            self.log.logger.error("连接失败")
+            self.log.logger.info("连接失败")
             print('xiao ji')
 
     def write_data_slot(self):
-
         message = self.ui.lineEdit.text()
         print('Client: {}'.format(message))
         datagram = message.encode()
@@ -54,7 +51,6 @@ class MainWindow(QMainWindow):
             self.sock.write(datagram)
         except Exception:
             self.log.logger.error("write_data_slot：寄")
-
 
     @pyqtSlot()
     def on_pushButton_clicked(self):
@@ -85,7 +81,6 @@ class MainWindow(QMainWindow):
         :return:
         '''
         self.bbox = None
-
 
     @pyqtSlot()
     def on_pushButton_4_clicked(self):
