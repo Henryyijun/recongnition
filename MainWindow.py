@@ -12,14 +12,13 @@ import socket
 from MyLogger import MyLogger
 from PyQt5.QtCore import Qt
 from PyQt5.QtNetwork import QTcpSocket, QHostAddress
-import threading
+
 from LoginWindow import LoginWindow
+
 
 class MainWindow(QMainWindow):
     def __init__(self):
         QWidget.__init__(self)
-        self.IP = '127.0.0.1'
-        self.PORT = 8080
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.bbox = None
@@ -38,9 +37,10 @@ class MainWindow(QMainWindow):
         print('connect to host')
         self.IP = ip
         self.PORT = port
-        self.show()
         try:
-            self.sock.connectToHost(QHostAddress.LocalHost, self.PORT)
+            self.sock.connectToHost(QHostAddress(self.IP), self.PORT)
+            self.show()
+            self.Login_window.close()
         except Exception:
             self.log.logger.error("连接失败")
             print('xiao ji')

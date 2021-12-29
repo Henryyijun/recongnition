@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(584, 478)
+        MainWindow.resize(1000,1000)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
@@ -30,7 +30,7 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.label_2, 3, 1, 1, 1)
 
         self.graphicsView = QtWidgets.QGraphicsView(self.centralwidget)
-        self.graphicsView.setGeometry(QtCore.QRect(0, 0, 400, 300))  # 左上角 width height
+        self.graphicsView.setGeometry(QtCore.QRect(0, 0, 700, 700))  # 左上角 width height
         # self.graphicsView.setSizeIncrement(QtCore.QSize(0, 0))
         # self.graphicsView.setFrameShadow(QtWidgets.QFrame.Raised)
         # self.graphicsView.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContentsOnFirstShow)

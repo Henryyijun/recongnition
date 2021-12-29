@@ -4,3 +4,5 @@
 2021-12-29 15:39:03,503 - E:\work_place\recongnition\MainWindow.py[line:45] - ERROR: 连接失败
 2021-12-29 15:45:18,318 - E:\work_place\recongnition\MainWindow.py[line:45] - ERROR: 连接失败
 2021-12-29 15:47:17,918 - E:\work_place\recongnition\MainWindow.py[line:45] - ERROR: 连接失败
+2021-12-29 16:31:58,350 - E:\pythonProject\MainWindow.py[line:78] - INFO: 识别错误，用户未框选
+2021-12-29 16:32:56,325 - E:\pythonProject\MainWindow.py[line:78] - INFO: 识别错误，用户未框选

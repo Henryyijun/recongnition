@@ -11,8 +11,6 @@ import requests
 import datetime
 log = MyLogger('ServerWindowLog.txt')
 
-
-
 # class Server(socketserver.BaseRequestHandler):
 #
 #     def add_obj(self, obj):
@@ -72,7 +70,6 @@ class ServerWindow(QMainWindow):
         self.port = 8080
 
         self.server = QTcpServer(self)
-
         if not self.server.listen(QHostAddress.LocalHost, self.port):
             self.ui.textEdit.append(self.server.errorString())
         self.server.newConnection.connect(self.new_socket_slot)
