@@ -13,7 +13,7 @@ from MyLogger import MyLogger
 from PyQt5.QtCore import Qt
 from PyQt5.QtNetwork import QTcpSocket, QHostAddress
 import threading
-
+from LoginWindow import LoginWindow
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -29,7 +29,21 @@ class MainWindow(QMainWindow):
         self.scene = QGraphicsScene(self)
         self.log = MyLogger('MainWindowLog.txt')
         self.sock = QTcpSocket(self)
-        self.sock.connectToHost(QHostAddress.LocalHost, self.PORT)
+        # self.sock.connectToHost(QHostAddress.LocalHost, self.PORT)
+        self.Login_window = LoginWindow()
+        self.Login_window.IP_signal.connect(self.connect_to_host)
+        self.Login_window.show()
+
+    def connect_to_host(self, ip, port):
+        print('connect to host')
+        self.IP = ip
+        self.PORT = port
+        self.show()
+        try:
+            self.sock.connectToHost(QHostAddress.LocalHost, self.PORT)
+        except Exception:
+            self.log.logger.error("连接失败")
+            print('xiao ji')
 
     def write_data_slot(self):
 
@@ -89,7 +103,9 @@ class MainWindow(QMainWindow):
         返回登录按钮
         :return:
         '''
-        pass
+        self.Login_window.show()
+        self.close()
+
 
     def get_box(self, begin, end):
         x1, y1 = begin.x(), begin.y()

@@ -45,9 +45,7 @@ class ServerWindow(QMainWindow):
     @pyqtSlot()
     def on_pushButton_clicked(self):
         print('建立连接')
-        if not self.server.listen(QHostAddress.LocalHost, self.port):
-            self.ui.textEdit.append(self.server.errorString())
-        self.server.newConnection.connect(self.new_socket_slot)
+
     
     @pyqtSlot()
     def on_pushButton_2_clicked(self):
@@ -74,6 +72,10 @@ class ServerWindow(QMainWindow):
         self.port = 8080
 
         self.server = QTcpServer(self)
+
+        if not self.server.listen(QHostAddress.LocalHost, self.port):
+            self.ui.textEdit.append(self.server.errorString())
+        self.server.newConnection.connect(self.new_socket_slot)
 
 
     def new_socket_slot(self):
