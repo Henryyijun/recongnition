@@ -1,0 +1,1 @@
+2022-01-11 15:06:21,181 - ServerWindow.py[line:83] - INFO: Connected with address 127.0.0.1, port 51486
