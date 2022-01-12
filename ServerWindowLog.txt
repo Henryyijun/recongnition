@@ -1,1 +1,14 @@
-2022-01-11 14:46:10,696 - E:\work_place\Server\ServerWindow.py[line:87] - INFO: Connected with address 127.0.0.1, port 50644
+2022-01-12 16:50:00,301 - E:\work_place\Server\ServerWindow.py[line:112] - INFO: [receive message]:class Hoinnindon(QHoinmindon)de1a01uQnidqct1136uel.0.0.0.0sCL9.PORT60000Ui _Roinnind
+2022-01-12 16:50:15,629 - E:\work_place\Server\ServerWindow.py[line:112] - INFO: [receive message]:Cc1a09 Haintindon0nainlindon::aii? |E: 0.
+2022-01-12 16:53:47,995 - E:\work_place\Server\ServerWindow.py[line:120] - ERROR: receive message error
+2022-01-12 16:56:04,266 - E:\work_place\Server\ServerWindow.py[line:120] - INFO: [receive message]:class Hoinnindon(QHoinmindon)de1a01uQnidqct1136uel.0.0.0.0sCL9.PORT60000Ui _Roinnind
+2022-01-12 16:56:21,787 - E:\work_place\Server\ServerWindow.py[line:120] - INFO: [receive message]:class Hoinnindon(QHoinmindon)e1a6unidqctn9_g1.0.auflanMainwlon
+2022-01-12 16:56:27,482 - E:\work_place\Server\ServerWindow.py[line:120] - INFO: [receive message]:iniaaan
+2022-01-12 16:59:44,690 - E:\work_place\Server\ServerWindow.py[line:120] - INFO: [receive message]:widninagg.uhopglthgight iwogo.uhopose19.ucong.cicar(ag19.ui.qrapnicuvico.widno400E hgiqht a 200
+2022-01-12 17:00:52,315 - E:\work_place\Server\ServerWindow.py[line:121] - INFO: [receive message]:widninagg.uhopglthgight iwogo.uhopose19.ucong.cicar(ag19.ui.qrapnicuvico.widno400E hgiqht a 200
+2022-01-12 17:01:28,575 - E:\work_place\Server\ServerWindow.py[line:121] - INFO: [receive message]:widninagg.uhopglthgight iwogo.uhopose19.ucong.cicar(ag19.ui.qrapnicuvico.widno400E hgiqht a 200
+2022-01-12 17:04:20,391 - E:\work_place\Server\ServerWindow.py[line:121] - INFO: [receive message]:9e1.icoo ongagl9.uceneQcruphicusccng(ao14agl9.log Bylogggrxoinnindonloq.tztgi9.uhon)HOOSLON.conngct 1oHout(QHogAddrgauug19.uarverQfcpServer1Et notoo19
+2022-01-12 17:04:36,479 - E:\work_place\Server\ServerWindow.py[line:121] - INFO: [receive message]:aot9.ttoo ahon
+2022-01-12 17:04:40,008 - E:\work_place\Server\ServerWindow.py[line:121] - INFO: [receive message]:iaw
+2022-01-12 17:04:44,887 - E:\work_place\Server\ServerWindow.py[line:121] - INFO: [receive message]:susccng(gg10xainmindonloq.txtaHostQHoddrsrver(ug1:
+2022-01-12 17:04:55,326 - E:\work_place\Server\ServerWindow.py[line:121] - INFO: [receive message]:识别错误，识别区域中未识别出内容

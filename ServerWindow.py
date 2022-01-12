@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import QWidget
 from PyQt5.QtWidgets import QMainWindow
 from Ui_serverwindow import Ui_ServerWindow
 from MyLogger import MyLogger
-from PyQt5.QtNetwork import QTcpServer, QHostAddress
+from PyQt5.QtNetwork import QTcpSocket, QHostAddress
 import datetime
 log = MyLogger('ServerWindowLog.txt')
 
@@ -45,69 +45,83 @@ class ServerWindow(QMainWindow):
     
     @pyqtSlot()
     def on_pushButton_2_clicked(self):
-        print('开始接收')
+        print('识别')
+        self.write_data_slot()
+        self.sock.readyRead.connect(lambda: self.read_data_slot(self.sock))
+
 
     @pyqtSlot()
     def on_pushButton_3_clicked(self):
-        print('停止接收')
+        print('建立连接')
+        ip = self.ui.ip_text.text()
+        port = self.ui.port_text.text()
+        port = int(port)
+        print(ip,port)
+        try:
+            self.connect_to_host(ip, port)
+        except Exception:
+            print("connect failed!")
 
-    @pyqtSlot()
-    def on_pushButton_4_clicked(self):
-        print('设定ip与端口')
 
-    @pyqtSlot()
-    def on_pushButton_5_clicked(self):
-        print('确定ip与端口')
 
 
     def __init__(self):
         QWidget.__init__(self)
         self.ui = Ui_ServerWindow()
         self.ui.setupUi(self)
-        self.ip = '0.0.0.0'
-        self.port = 60000
+        self.IP = '0.0.0.0'
+        self.PORT = 60000
+        self.message = None
 
-        self.server = QTcpServer(self)
-
-        if not self.server.listen(QHostAddress(self.ip), self.port):
-            self.ui.textEdit.append(self.server.errorString())
-        self.server.newConnection.connect(self.new_socket_slot)
+        self.sock = QTcpSocket(self)
 
 
-    def new_socket_slot(self):
-        sock = self.server.nextPendingConnection()
+    def connect_to_host(self, ip, port):
+        print('connect to host')
+        self.IP = ip
+        self.PORT = port
+        try:
+            self.sock.connectToHost(QHostAddress.LocalHost, self.PORT)
+        except Exception:
+            self.log.logger.error("连接失败")
+            print('xiao ji')
 
-        peer_address = sock.peerAddress().toString()
-        peer_port = sock.peerPort()
-        news = 'Connected with address {}, port {}'.format(peer_address, str(peer_port))
-        log.logger.info(news)
-        self.ui.textEdit.append(news)
+    def write_data_slot(self):
 
-        sock.readyRead.connect(lambda: self.read_data_slot(sock))
-        # sock.disconnected.connect(lambda: self.disconnected_slot(sock))
+        message = "recognition"
+        print('Client: {}'.format(message))
+        datagram = message.encode()
+        try:
+            self.sock.write(datagram)
+        except Exception:
+            self.log.logger.error("write_data_slot：寄")
 
-        # 3
 
     def read_data_slot(self, sock):
         while sock.bytesAvailable():
             try:
                 datagram = sock.read(sock.bytesAvailable())
-                message = datagram.decode()
+                self.message = datagram.decode()
+                self.View_message()
+                break
                 #answer = self.get_answer(message).replace('{br}', '\n')
             except Exception:
                 log.logger.error("read_data_slot1: error")
-            try:
-                # new_datagram = answer.encode()
-                #sock.write(new_datagram)
-                print(message)
-                dt = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-                self.ui.textEdit.append('[' + dt + ']: ' + message)
-                log.logger.info("[receive message]:"+message)
-            except Exception:
-                log.logger.error("receive message error")
 
 
         # 4
+    def View_message(self):
+        try:
+            # new_datagram = answer.encode()
+            # sock.write(new_datagram)
+            if self.message is not None:
+                print(self.message)
+                dt = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                self.ui.textEdit.append('[' + dt + ']: ' + self.message)
+                log.logger.info("[receive message]:" + self.message)
+                self.message=None
+        except Exception:
+            log.logger.error("receive message error")
 
     def disconnected_slot(self, sock):
         peer_address = sock.peerAddress().toString()
