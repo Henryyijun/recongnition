@@ -1,5 +1,5 @@
 from PyQt5.QtGui import QPixmap, QGuiApplication, QColor, QPen, QPainter
-from PyQt5.QtWidgets import QWidget, QApplication
+from PyQt5.QtWidgets import QWidget, QApplication, QDialog
 from PyQt5.QtCore import Qt, pyqtSlot, pyqtSignal, qAbs, QRect, QPoint
 
 
@@ -31,7 +31,11 @@ class CaptureScreen(QWidget):
 
     def load_background_pixmap(self):
         # 截下当前屏幕的图像
-        self.load_pixmap = QGuiApplication.primaryScreen().grabWindow(QApplication.desktop().winId())
+        screen = QGuiApplication.screens()[-1]
+        # self.load_pixmap = QGuiApplication.primaryScreen().grabWindow(QApplication.desktop().winId())
+        dialog = QDialog()
+        dialog.setGeometry(screen.availableGeometry())
+        self.load_pixmap = screen.grabWindow(QApplication.desktop().winId(), dialog.x(), dialog.y(), dialog.width(), dialog.width())
         self.screen_width = self.load_pixmap.width()
         self.screen_height = self.load_pixmap.height()
 
@@ -56,10 +60,6 @@ class CaptureScreen(QWidget):
         self.is_mouse_pressed = False
         return QWidget.mouseReleaseEvent(self, event)
 
-    # def mouseDoubleClickEvent(self, event):
-    #     if self.capture_pixmap is not None:
-    #         self.signal_complete_capture.emit(self.begin_pos, self.end_pos)
-    #         self.close()
     def paintEvent(self, event):
         self.painter.begin(self)
         shadow_color = QColor(0, 0, 0, 100)  # 阴影颜色设置

@@ -28,11 +28,9 @@ class Ui_MainWindow(object):
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setObjectName("label_2")
         self.gridLayout.addWidget(self.label_2, 3, 1, 1, 1)
-
         self.graphicsView = QtWidgets.QGraphicsView(self.centralwidget)
         self.graphicsView.setGeometry(QtCore.QRect(0, 0, 400, 300))  # 左上角 width height
         self.graphicsView.setObjectName("graphicsView")
-
         self.gridLayout.addWidget(self.graphicsView, 2, 1, 1, 4)
         self.pushButton_4 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_4.setObjectName("pushButton_4")
@@ -56,7 +54,6 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
         self.action = QtWidgets.QAction(MainWindow)
         self.action.setObjectName("action")
-
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
