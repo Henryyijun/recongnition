@@ -31,10 +31,6 @@ class Ui_MainWindow(object):
 
         self.graphicsView = QtWidgets.QGraphicsView(self.centralwidget)
         self.graphicsView.setGeometry(QtCore.QRect(0, 0, 400, 300))  # 左上角 width height
-        # self.graphicsView.setSizeIncrement(QtCore.QSize(0, 0))
-        # self.graphicsView.setFrameShadow(QtWidgets.QFrame.Raised)
-        # self.graphicsView.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContentsOnFirstShow)
-        # self.graphicsView.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.graphicsView.setObjectName("graphicsView")
 
         self.gridLayout.addWidget(self.graphicsView, 2, 1, 1, 4)
@@ -51,9 +47,9 @@ class Ui_MainWindow(object):
         self.lineEdit.setText("")
         self.lineEdit.setObjectName("lineEdit")
         self.gridLayout.addWidget(self.lineEdit, 4, 1, 1, 4)
-        self.pushButton_5 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_5.setObjectName("pushButton_5")
-        self.gridLayout.addWidget(self.pushButton_5, 0, 1, 1, 1)
+        # self.pushButton_5 = QtWidgets.QPushButton(self.centralwidget)
+        # self.pushButton_5.setObjectName("pushButton_5")
+        # self.gridLayout.addWidget(self.pushButton_5, 0, 1, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
@@ -73,7 +69,7 @@ class Ui_MainWindow(object):
         self.pushButton_4.setText(_translate("MainWindow", "发送"))
         self.label.setText(_translate("MainWindow", "本次识别的图片："))
         self.pushButton_3.setText(_translate("MainWindow", "停止识别"))
-        self.pushButton_5.setText(_translate("MainWindow", "返回登录界面"))
-        self.action.setText(_translate("MainWindow", "返回登陆界面"))
+        # self.pushButton_5.setText(_translate("MainWindow", "返回登录界面"))
+        # self.action.setText(_translate("MainWindow", "返回登陆界面"))
 
 

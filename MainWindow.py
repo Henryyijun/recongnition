@@ -10,7 +10,7 @@ import cv2
 import numpy as np
 from MyLogger import MyLogger
 from PyQt5.QtNetwork import QTcpServer, QHostAddress
-from LoginWindow import LoginWindow
+
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -30,8 +30,6 @@ class MainWindow(QMainWindow):
         self.scene = QGraphicsScene(self)
         self.log = MyLogger('MainWindowLog.txt')
         self.show()
-        # self.sock.connectToHost(QHostAddress.LocalHost, self.PORT)
-        # 建立服务器
         self.server = QTcpServer(self)
         # 建立连接
         if not self.server.listen(QHostAddress(self.IP), self.PORT):
@@ -146,7 +144,6 @@ class MainWindow(QMainWindow):
         news = 'Connected with address {}, port {}'.format(peer_address, str(peer_port))
         self.log.logger.info(news)
         self.sock.readyRead.connect(lambda: self.read_data_slot(self.sock))
-        # sock.disconnected.connect(lambda: self.disconnected_slot(sock))
 
     def read_data_slot(self, sock):
         while sock.bytesAvailable():

@@ -61,3 +61,61 @@ Cookie: _xsrf=2|07bffcf0|c8ba807004387269b29a5110d5b3da8c|1641722524
 2022-01-12 17:04:44,595 - E:\work_place\pocr\MainWindow.py[line:182] - INFO: [receive message]:recognition
 2022-01-12 17:04:55,251 - E:\work_place\pocr\MainWindow.py[line:182] - INFO: [receive message]:recognition
 2022-01-12 17:04:55,323 - E:\work_place\pocr\MainWindow.py[line:48] - ERROR: 识别错误，识别区域中未识别出内容
+2022-01-12 18:32:41,583 - E:\workplace\recognition_client\MainWindow.py[line:147] - INFO: Connected with address 127.0.0.1, port 52730
+2022-01-12 18:32:49,129 - E:\workplace\recognition_client\MainWindow.py[line:159] - INFO: [receive message]:recognition
+2022-01-12 18:33:00,363 - E:\workplace\recognition_client\MainWindow.py[line:159] - INFO: [receive message]:recognition
+2022-01-12 18:33:08,355 - E:\workplace\recognition_client\MainWindow.py[line:159] - INFO: [receive message]:recognition
+2022-01-12 18:33:16,331 - E:\workplace\recognition_client\MainWindow.py[line:159] - INFO: [receive message]:recognition
+2022-01-12 18:33:25,455 - E:\workplace\recognition_client\MainWindow.py[line:159] - INFO: [receive message]:recognition
+2022-01-12 18:33:25,557 - E:\workplace\recognition_client\MainWindow.py[line:45] - ERROR: 识别错误，识别区域中未识别出内容
+2022-01-12 18:33:31,755 - E:\workplace\recognition_client\MainWindow.py[line:159] - INFO: [receive message]:recognition
+2022-01-12 18:35:25,921 - E:\workplace\recognition_client\MainWindow.py[line:147] - INFO: Connected with address 127.0.0.1, port 52873
+2022-01-12 18:35:25,922 - E:\workplace\recognition_client\MainWindow.py[line:159] - INFO: [receive message]:GET / HTTP/1.1
+Host: localhost:60000
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36
+Upgrade: websocket
+Origin: https://www.cnblogs.com
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,und;q=0.7
+Sec-WebSocket-Key: Pl73Ww598W5rQtB+0zf3Lg==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+
+
+2022-01-12 18:37:46,364 - E:\workplace\recognition_client\MainWindow.py[line:147] - INFO: Connected with address 127.0.0.1, port 52972
+2022-01-12 18:37:46,365 - E:\workplace\recognition_client\MainWindow.py[line:159] - INFO: [receive message]:GET / HTTP/1.1
+Host: localhost:60000
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36
+Upgrade: websocket
+Origin: chrome://new-tab-page
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,und;q=0.7
+Sec-WebSocket-Key: RHAj/9C/0jbsP4EPkC9hbA==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+
+
+2022-01-12 18:41:46,074 - E:\workplace\recognition_client\MainWindow.py[line:147] - INFO: Connected with address 127.0.0.1, port 53236
+2022-01-12 18:41:46,076 - E:\workplace\recognition_client\MainWindow.py[line:157] - ERROR: read_data_slot1: error
+2022-01-12 18:41:46,076 - E:\workplace\recognition_client\MainWindow.py[line:172] - ERROR: receive message error
+2022-01-12 20:07:03,071 - E:\workplace\recognition_client\MainWindow.py[line:49] - ERROR: write_data_slot：寄
+2022-01-12 20:07:04,574 - E:\workplace\recognition_client\MainWindow.py[line:49] - ERROR: write_data_slot：寄
+2022-01-12 20:07:05,652 - E:\workplace\recognition_client\MainWindow.py[line:49] - ERROR: write_data_slot：寄
+2022-01-12 20:07:06,462 - E:\workplace\recognition_client\MainWindow.py[line:49] - ERROR: write_data_slot：寄
+2022-01-12 20:07:07,108 - E:\workplace\recognition_client\MainWindow.py[line:49] - ERROR: write_data_slot：寄
+2022-01-12 20:07:07,406 - E:\workplace\recognition_client\MainWindow.py[line:49] - ERROR: write_data_slot：寄
+2022-01-12 20:07:07,698 - E:\workplace\recognition_client\MainWindow.py[line:49] - ERROR: write_data_slot：寄
+2022-01-12 20:07:07,942 - E:\workplace\recognition_client\MainWindow.py[line:49] - ERROR: write_data_slot：寄
+2022-01-12 20:07:08,186 - E:\workplace\recognition_client\MainWindow.py[line:49] - ERROR: write_data_slot：寄
+2022-01-12 20:07:08,382 - E:\workplace\recognition_client\MainWindow.py[line:49] - ERROR: write_data_slot：寄
+2022-01-12 20:07:14,753 - E:\workplace\recognition_client\MainWindow.py[line:71] - INFO: 识别错误，用户未框选
+2022-01-12 20:07:15,658 - E:\workplace\recognition_client\MainWindow.py[line:71] - INFO: 识别错误，用户未框选
+2022-01-12 20:07:16,358 - E:\workplace\recognition_client\MainWindow.py[line:71] - INFO: 识别错误，用户未框选
+2022-01-12 20:07:16,934 - E:\workplace\recognition_client\MainWindow.py[line:71] - INFO: 识别错误，用户未框选
+2022-01-12 20:07:17,728 - E:\workplace\recognition_client\MainWindow.py[line:71] - INFO: 识别错误，用户未框选
