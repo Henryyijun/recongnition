@@ -38,10 +38,7 @@ class MainWindow(QMainWindow):
             self.ui.textEdit.append(self.server.errorString())
         self.server.newConnection.connect(self.new_socket_slot)
 
-
-
     def write_data_slot(self):
-
         message = self.ui.lineEdit.text()
         if message == '':
             message = "识别错误，识别区域中未识别出内容"
@@ -52,7 +49,6 @@ class MainWindow(QMainWindow):
             self.sock.write(datagram)
         except Exception:
             self.log.logger.error("write_data_slot：寄")
-
 
     @pyqtSlot()
     def on_pushButton_clicked(self):
@@ -84,7 +80,6 @@ class MainWindow(QMainWindow):
         '''
         self.bbox = None
 
-
     @pyqtSlot()
     def on_pushButton_4_clicked(self):
         '''
@@ -104,7 +99,6 @@ class MainWindow(QMainWindow):
         self.Login_window.show()
         self.close()
 
-
     def get_box(self, begin, end):
         x1, y1 = begin.x(), begin.y()
         x2, y2 = end.x(), end.y()
@@ -120,12 +114,6 @@ class MainWindow(QMainWindow):
                 img = cv2.cvtColor(numpy.asarray(img), cv2.COLOR_RGB2GRAY)
                 img = cv2.medianBlur(img, 3)
                 img = cv2.filter2D(img, -1, kernel=self.kernel)
-                # # ret, img = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
-                # img = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_MEAN_C, \
-                #                   cv2.THRESH_BINARY_INV, 11, 2)
-                # cv2.erode(img, None, iterations=5)
-                # cv2.imshow('median', img)
-                # cv2.waitKey(0)
                 result = self.ocr.ocr(img, cls=True)
                 txts = [line[1][0] for line in result]
                 print(txts)
@@ -133,8 +121,6 @@ class MainWindow(QMainWindow):
                 print(e)
         else:
             print('未框选')
-
-            # need to complete
         return txts, img_rbg
 
     def show_image(self, image):
@@ -148,37 +134,28 @@ class MainWindow(QMainWindow):
         print(image.shape)
         im = Image.fromarray(image)
         pix = im.toqpixmap()
-        #pix = QPixmap(frame)
         self.item = QGraphicsPixmapItem(pix)
         self.scene.addItem(self.item)
         self.ui.graphicsView.setScene(self.scene)
         self.scene.update()
-        # self.ui.graphicsView.fitInView(QGraphicsPixmapItem(pix))
-        # self.ui.graphicsView.show()
 
     def new_socket_slot(self):
         self.sock = self.server.nextPendingConnection()
-
         peer_address = self.sock.peerAddress().toString()
         peer_port = self.sock.peerPort()
         news = 'Connected with address {}, port {}'.format(peer_address, str(peer_port))
         self.log.logger.info(news)
-
         self.sock.readyRead.connect(lambda: self.read_data_slot(self.sock))
         # sock.disconnected.connect(lambda: self.disconnected_slot(sock))
 
-        # 3
     def read_data_slot(self, sock):
         while sock.bytesAvailable():
             try:
                 datagram = sock.read(sock.bytesAvailable())
                 message = datagram.decode()
-                #answer = self.get_answer(message).replace('{br}', '\n')
             except Exception:
                 self.log.logger.error("read_data_slot1: error")
             try:
-                # new_datagram = answer.encode()
-                #sock.write(new_datagram)
                 self.log.logger.info("[receive message]:"+message)
                 if message == "recognition":
                     result, img = self.recognition()

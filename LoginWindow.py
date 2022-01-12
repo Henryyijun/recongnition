@@ -11,8 +11,6 @@ class LoginWindow(QMainWindow):
         self.ui = Ui_loginWindow()
         self.ui.setupUi(self)
 
-
-
     @pyqtSlot()
     def on_loginBt_clicked(self):
         print('login')
