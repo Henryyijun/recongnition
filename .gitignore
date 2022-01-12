@@ -1,3 +1,4 @@
 2.3.0.2/
 .idea/
-_pycache_/
+__pycache__/
+*.txt
