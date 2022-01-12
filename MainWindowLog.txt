@@ -1,0 +1,63 @@
+2022-01-12 14:33:21,034 - E:\work_place\pocr\MainWindow.py[line:162] - INFO: Connected with address 127.0.0.1, port 49228
+2022-01-12 14:34:16,558 - E:\work_place\pocr\MainWindow.py[line:162] - INFO: Connected with address 127.0.0.1, port 49318
+2022-01-12 14:34:16,559 - E:\work_place\pocr\MainWindow.py[line:162] - INFO: Connected with address 127.0.0.1, port 49319
+2022-01-12 14:34:16,568 - E:\work_place\pocr\MainWindow.py[line:192] - ERROR: receive message error
+2022-01-12 14:34:16,821 - E:\work_place\pocr\MainWindow.py[line:162] - INFO: Connected with address 127.0.0.1, port 49321
+2022-01-12 14:36:03,637 - E:\work_place\pocr\MainWindow.py[line:162] - INFO: Connected with address 127.0.0.1, port 49368
+2022-01-12 14:37:36,439 - E:\work_place\pocr\MainWindow.py[line:162] - INFO: Connected with address 127.0.0.1, port 49412
+2022-01-12 14:37:41,963 - E:\work_place\pocr\MainWindow.py[line:192] - ERROR: receive message error
+2022-01-12 14:37:47,534 - E:\work_place\pocr\MainWindow.py[line:192] - ERROR: receive message error
+2022-01-12 14:40:22,105 - E:\work_place\pocr\MainWindow.py[line:162] - INFO: Connected with address 127.0.0.1, port 49498
+2022-01-12 14:40:24,862 - E:\work_place\pocr\MainWindow.py[line:179] - INFO: [receive message]:recognition
+2022-01-12 14:40:25,140 - E:\work_place\pocr\MainWindow.py[line:51] - ERROR: write_data_slot：寄
+2022-01-12 14:41:35,285 - E:\work_place\pocr\MainWindow.py[line:162] - INFO: Connected with address 127.0.0.1, port 49532
+2022-01-12 14:41:35,288 - E:\work_place\pocr\MainWindow.py[line:162] - INFO: Connected with address 127.0.0.1, port 49533
+2022-01-12 14:41:35,296 - E:\work_place\pocr\MainWindow.py[line:179] - INFO: [receive message]:GET / HTTP/1.1
+Host: localhost:60000
+Connection: keep-alive
+Cache-Control: max-age=0
+sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="97", "Chromium";v="97"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: _xsrf=2|07bffcf0|c8ba807004387269b29a5110d5b3da8c|1641722524
+
+
+2022-01-12 14:41:35,536 - E:\work_place\pocr\MainWindow.py[line:162] - INFO: Connected with address 127.0.0.1, port 49535
+2022-01-12 14:45:50,110 - E:\work_place\pocr\MainWindow.py[line:162] - INFO: Connected with address 127.0.0.1, port 49777
+2022-01-12 14:45:52,350 - E:\work_place\pocr\MainWindow.py[line:179] - INFO: [receive message]:recognition
+2022-01-12 16:48:49,337 - E:\work_place\pocr\MainWindow.py[line:179] - INFO: [receive message]:recognition
+2022-01-12 16:49:06,426 - E:\work_place\pocr\MainWindow.py[line:179] - INFO: [receive message]:recognition
+2022-01-12 16:49:41,716 - E:\work_place\pocr\MainWindow.py[line:162] - INFO: Connected with address 127.0.0.1, port 53262
+2022-01-12 16:49:48,722 - E:\work_place\pocr\MainWindow.py[line:179] - INFO: [receive message]:recognition
+2022-01-12 16:50:00,302 - E:\work_place\pocr\MainWindow.py[line:179] - INFO: [receive message]:recognition
+2022-01-12 16:50:15,630 - E:\work_place\pocr\MainWindow.py[line:179] - INFO: [receive message]:recognition
+2022-01-12 16:53:45,645 - E:\work_place\pocr\MainWindow.py[line:162] - INFO: Connected with address 127.0.0.1, port 53390
+2022-01-12 16:53:47,995 - E:\work_place\pocr\MainWindow.py[line:179] - INFO: [receive message]:recognition
+2022-01-12 16:55:53,252 - E:\work_place\pocr\MainWindow.py[line:162] - INFO: Connected with address 127.0.0.1, port 53447
+2022-01-12 16:56:00,163 - E:\work_place\pocr\MainWindow.py[line:179] - INFO: [receive message]:recognition
+2022-01-12 16:56:04,273 - E:\work_place\pocr\MainWindow.py[line:179] - INFO: [receive message]:recognition
+2022-01-12 16:56:21,790 - E:\work_place\pocr\MainWindow.py[line:179] - INFO: [receive message]:recognition
+2022-01-12 16:56:27,483 - E:\work_place\pocr\MainWindow.py[line:179] - INFO: [receive message]:recognition
+2022-01-12 16:59:39,661 - E:\work_place\pocr\MainWindow.py[line:162] - INFO: Connected with address 127.0.0.1, port 53620
+2022-01-12 16:59:42,748 - E:\work_place\pocr\MainWindow.py[line:179] - INFO: [receive message]:recognition
+2022-01-12 16:59:44,697 - E:\work_place\pocr\MainWindow.py[line:179] - INFO: [receive message]:recognition
+2022-01-12 17:00:48,606 - E:\work_place\pocr\MainWindow.py[line:162] - INFO: Connected with address 127.0.0.1, port 53649
+2022-01-12 17:00:51,851 - E:\work_place\pocr\MainWindow.py[line:179] - INFO: [receive message]:recognition
+2022-01-12 17:01:28,148 - E:\work_place\pocr\MainWindow.py[line:179] - INFO: [receive message]:recognition
+2022-01-12 17:01:30,810 - E:\work_place\pocr\MainWindow.py[line:179] - INFO: [receive message]:recognition
+2022-01-12 17:04:17,262 - E:\work_place\pocr\MainWindow.py[line:165] - INFO: Connected with address 127.0.0.1, port 53752
+2022-01-12 17:04:19,571 - E:\work_place\pocr\MainWindow.py[line:182] - INFO: [receive message]:recognition
+2022-01-12 17:04:36,340 - E:\work_place\pocr\MainWindow.py[line:182] - INFO: [receive message]:recognition
+2022-01-12 17:04:39,827 - E:\work_place\pocr\MainWindow.py[line:182] - INFO: [receive message]:recognition
+2022-01-12 17:04:44,595 - E:\work_place\pocr\MainWindow.py[line:182] - INFO: [receive message]:recognition
+2022-01-12 17:04:55,251 - E:\work_place\pocr\MainWindow.py[line:182] - INFO: [receive message]:recognition
+2022-01-12 17:04:55,323 - E:\work_place\pocr\MainWindow.py[line:48] - ERROR: 识别错误，识别区域中未识别出内容
