@@ -1,1 +1,31 @@
-2022-01-11 15:06:21,181 - ServerWindow.py[line:83] - INFO: Connected with address 127.0.0.1, port 51486
+2022-01-17 21:05:49,374 - ServerWindow.py[line:121] - INFO: [receive message]:$`  Iibslsqp_op.RZ4
+2022-01-17 21:05:50,264 - ServerWindow.py[line:121] - INFO: [receive message]:$`  Iibslsqp_op.RZ4
+2022-01-17 21:05:50,761 - ServerWindow.py[line:121] - INFO: [receive message]:$`  Iibslsqp_op.RZ4
+2022-01-17 21:05:51,072 - ServerWindow.py[line:121] - INFO: [receive message]:$`  Iibslsqp_op.RZ4
+2022-01-17 21:05:51,314 - ServerWindow.py[line:121] - INFO: [receive message]:$`  Iibslsqp_op.RZ4
+2022-01-17 21:05:54,490 - ServerWindow.py[line:121] - INFO: [receive message]:LoginWindow.p
+2022-01-17 21:05:55,298 - ServerWindow.py[line:121] - INFO: [receive message]:LoginWindow.p
+2022-01-17 21:05:58,059 - ServerWindow.py[line:121] - INFO: [receive message]:Mainwindow.p
+2022-01-17 21:06:00,182 - ServerWindow.py[line:121] - INFO: [receive message]:msvcp140.dll
+2022-01-17 21:06:02,719 - ServerWindow.py[line:121] - INFO: [receive message]:` opengl32sw.dll
+2022-01-17 21:06:05,673 - ServerWindow.py[line:121] - INFO: [receive message]:`python37.dll
+2022-01-17 21:06:08,694 - ServerWindow.py[line:121] - INFO: [receive message]:`Qt5DBus.dll
+2022-01-17 21:06:09,028 - ServerWindow.py[line:121] - INFO: [receive message]:`Qt5DBus.dll
+2022-01-17 21:06:12,796 - ServerWindow.py[line:121] - INFO: [receive message]:s.dll
+2022-01-17 21:06:13,194 - ServerWindow.py[line:121] - INFO: [receive message]:s.dll
+2022-01-17 21:06:13,585 - ServerWindow.py[line:121] - INFO: [receive message]:s.dll
+2022-01-17 21:06:14,561 - ServerWindow.py[line:121] - INFO: [receive message]:s.dll
+2022-01-17 21:06:14,871 - ServerWindow.py[line:121] - INFO: [receive message]:s.dll
+2022-01-17 21:06:15,126 - ServerWindow.py[line:121] - INFO: [receive message]:s.dll
+2022-01-17 21:06:15,313 - ServerWindow.py[line:121] - INFO: [receive message]:s.dll
+2022-01-17 21:06:15,479 - ServerWindow.py[line:121] - INFO: [receive message]:s.dll
+2022-01-17 21:06:15,634 - ServerWindow.py[line:121] - INFO: [receive message]:s.dll
+2022-01-17 21:06:15,779 - ServerWindow.py[line:121] - INFO: [receive message]:s.dll
+2022-01-17 21:06:15,925 - ServerWindow.py[line:121] - INFO: [receive message]:s.dll
+2022-01-17 21:06:16,071 - ServerWindow.py[line:121] - INFO: [receive message]:s.dll
+2022-01-17 21:06:16,192 - ServerWindow.py[line:121] - INFO: [receive message]:s.dll
+2022-01-17 21:06:16,347 - ServerWindow.py[line:121] - INFO: [receive message]:s.dll
+2022-01-17 21:06:16,479 - ServerWindow.py[line:121] - INFO: [receive message]:s.dll
+2022-01-17 21:06:16,615 - ServerWindow.py[line:121] - INFO: [receive message]:s.dll
+2022-01-17 21:06:16,836 - ServerWindow.py[line:121] - INFO: [receive message]:s.dll
+2022-01-17 21:06:16,980 - ServerWindow.py[line:121] - INFO: [receive message]:s.dll

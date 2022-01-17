@@ -1,14 +1,41 @@
-2022-01-12 16:50:00,301 - E:\work_place\Server\ServerWindow.py[line:112] - INFO: [receive message]:class Hoinnindon(QHoinmindon)de1a01uQnidqct1136uel.0.0.0.0sCL9.PORT60000Ui _Roinnind
-2022-01-12 16:50:15,629 - E:\work_place\Server\ServerWindow.py[line:112] - INFO: [receive message]:Cc1a09 Haintindon0nainlindon::aii? |E: 0.
-2022-01-12 16:53:47,995 - E:\work_place\Server\ServerWindow.py[line:120] - ERROR: receive message error
-2022-01-12 16:56:04,266 - E:\work_place\Server\ServerWindow.py[line:120] - INFO: [receive message]:class Hoinnindon(QHoinmindon)de1a01uQnidqct1136uel.0.0.0.0sCL9.PORT60000Ui _Roinnind
-2022-01-12 16:56:21,787 - E:\work_place\Server\ServerWindow.py[line:120] - INFO: [receive message]:class Hoinnindon(QHoinmindon)e1a6unidqctn9_g1.0.auflanMainwlon
-2022-01-12 16:56:27,482 - E:\work_place\Server\ServerWindow.py[line:120] - INFO: [receive message]:iniaaan
-2022-01-12 16:59:44,690 - E:\work_place\Server\ServerWindow.py[line:120] - INFO: [receive message]:widninagg.uhopglthgight iwogo.uhopose19.ucong.cicar(ag19.ui.qrapnicuvico.widno400E hgiqht a 200
-2022-01-12 17:00:52,315 - E:\work_place\Server\ServerWindow.py[line:121] - INFO: [receive message]:widninagg.uhopglthgight iwogo.uhopose19.ucong.cicar(ag19.ui.qrapnicuvico.widno400E hgiqht a 200
-2022-01-12 17:01:28,575 - E:\work_place\Server\ServerWindow.py[line:121] - INFO: [receive message]:widninagg.uhopglthgight iwogo.uhopose19.ucong.cicar(ag19.ui.qrapnicuvico.widno400E hgiqht a 200
-2022-01-12 17:04:20,391 - E:\work_place\Server\ServerWindow.py[line:121] - INFO: [receive message]:9e1.icoo ongagl9.uceneQcruphicusccng(ao14agl9.log Bylogggrxoinnindonloq.tztgi9.uhon)HOOSLON.conngct 1oHout(QHogAddrgauug19.uarverQfcpServer1Et notoo19
-2022-01-12 17:04:36,479 - E:\work_place\Server\ServerWindow.py[line:121] - INFO: [receive message]:aot9.ttoo ahon
-2022-01-12 17:04:40,008 - E:\work_place\Server\ServerWindow.py[line:121] - INFO: [receive message]:iaw
-2022-01-12 17:04:44,887 - E:\work_place\Server\ServerWindow.py[line:121] - INFO: [receive message]:susccng(gg10xainmindonloq.txtaHostQHoddrsrver(ug1:
-2022-01-12 17:04:55,326 - E:\work_place\Server\ServerWindow.py[line:121] - INFO: [receive message]:识别错误，识别区域中未识别出内容
+2022-01-17 21:18:45,827 - E:\recongnition\ServerWindow.py[line:35] - INFO: 没有输入ip或者端口号
+2022-01-17 21:18:49,164 - E:\recongnition\ServerWindow.py[line:35] - INFO: 没有输入ip或者端口号
+2022-01-17 21:19:17,813 - E:\recongnition\ServerWindow.py[line:35] - INFO: 没有输入ip或者端口号
+2022-01-17 21:19:30,700 - E:\recongnition\ServerWindow.py[line:35] - INFO: 没有输入ip或者端口号
+2022-01-17 21:20:29,305 - E:\recongnition\ServerWindow.py[line:35] - INFO: 没有输入ip或者端口号
+2022-01-17 21:23:58,582 - E:\recongnition\ServerWindow.py[line:76] - INFO: [receive message]:tryself.sock.connectToHost(QHostAddress(ip),port
+2022-01-17 21:24:00,306 - E:\recongnition\ServerWindow.py[line:76] - INFO: [receive message]:tryself.sock.connectToHost(QHostAddress(ip),port
+2022-01-17 21:33:29,040 - E:\recongnition\ServerWindow.py[line:83] - INFO: [receive message]:识别错误，识别区域中未识别出内容
+2022-01-17 21:33:36,234 - E:\recongnition\ServerWindow.py[line:83] - INFO: [receive message]:识别错误，识别区域中未识别出内容
+2022-01-17 21:33:36,583 - E:\recongnition\ServerWindow.py[line:83] - INFO: [receive message]:识别错误，识别区域中未识别出内容
+2022-01-17 21:33:36,873 - E:\recongnition\ServerWindow.py[line:83] - INFO: [receive message]:识别错误，识别区域中未识别出内容
+2022-01-17 21:33:38,323 - E:\recongnition\ServerWindow.py[line:83] - INFO: [receive message]:识别错误，识别区域中未识别出内容
+2022-01-17 21:33:38,656 - E:\recongnition\ServerWindow.py[line:83] - INFO: [receive message]:识别错误，识别区域中未识别出内容
+2022-01-17 21:33:38,924 - E:\recongnition\ServerWindow.py[line:83] - INFO: [receive message]:识别错误，识别区域中未识别出内容
+2022-01-17 21:33:47,077 - E:\recongnition\ServerWindow.py[line:83] - INFO: [receive message]:QTcpsooself.msq_bo1=0Mes
+2022-01-17 21:33:47,906 - E:\recongnition\ServerWindow.py[line:83] - INFO: [receive message]:QTcpsooself.msq_bo1=0Mes
+2022-01-17 21:33:48,666 - E:\recongnition\ServerWindow.py[line:83] - INFO: [receive message]:QTcpsooself.msq_bo1=0Mes
+2022-01-17 21:33:52,014 - E:\recongnition\ServerWindow.py[line:83] - INFO: [receive message]:识别错误，识别区域中未识别出内容
+2022-01-17 21:33:54,290 - E:\recongnition\ServerWindow.py[line:83] - INFO: [receive message]:识别错误，识别区域中未识别出内容
+2022-01-17 21:35:59,180 - E:\recongnition\ServerWindow.py[line:87] - INFO: [receive message]:识别错误，识别区域中未识别出内容
+2022-01-17 21:36:00,746 - E:\recongnition\ServerWindow.py[line:87] - INFO: [receive message]:识别错误，识别区域中未识别出内容
+2022-01-17 21:36:00,966 - E:\recongnition\ServerWindow.py[line:87] - INFO: [receive message]:识别错误，识别区域中未识别出内容
+2022-01-17 21:36:01,099 - E:\recongnition\ServerWindow.py[line:87] - INFO: [receive message]:识别错误，识别区域中未识别出内容
+2022-01-17 21:37:42,514 - E:\recongnition\ServerWindow.py[line:90] - INFO: [receive message]:识别错误，识别区域中未识别出内容
+2022-01-17 21:40:18,230 - E:\recongnition\ServerWindow.py[line:55] - ERROR: 连接超时
+2022-01-17 21:40:37,771 - E:\recongnition\ServerWindow.py[line:88] - INFO: [receive message]:识别错误，识别区域中未识别出内容
+2022-01-17 21:41:19,013 - E:\recongnition\ServerWindow.py[line:88] - INFO: [receive message]:识别错误，识别区域中未识别出内容
+2022-01-17 21:41:19,144 - E:\recongnition\ServerWindow.py[line:88] - INFO: [receive message]:识别错误，识别区域中未识别出内容
+2022-01-17 21:41:19,279 - E:\recongnition\ServerWindow.py[line:88] - INFO: [receive message]:识别错误，识别区域中未识别出内容
+2022-01-17 21:41:19,411 - E:\recongnition\ServerWindow.py[line:88] - INFO: [receive message]:识别错误，识别区域中未识别出内容
+2022-01-17 21:41:19,713 - E:\recongnition\ServerWindow.py[line:88] - INFO: [receive message]:识别错误，识别区域中未识别出内容
+2022-01-17 21:41:28,485 - E:\recongnition\ServerWindow.py[line:88] - INFO: [receive message]:message=recoqnition'print('Client:{}'.format(message)datagram=messaqe.encodeC)
+2022-01-17 21:41:29,048 - E:\recongnition\ServerWindow.py[line:88] - INFO: [receive message]:message=recoqnition'print('Client:{}'.format(message)datagram=messaqe.encodeC)
+2022-01-17 21:41:29,611 - E:\recongnition\ServerWindow.py[line:88] - INFO: [receive message]:message=recoqnition'print('Client:{}'.format(message)datagram=messaqe.encodeC)
+2022-01-17 21:41:30,172 - E:\recongnition\ServerWindow.py[line:88] - INFO: [receive message]:message=recoqnition'print('Client:{}'.format(message)datagram=messaqe.encodeC)message=recoqnition'print('Client:{}'.format(message)datagram=messaqe.encodeC)
+2022-01-17 21:41:36,514 - E:\recongnition\ServerWindow.py[line:88] - INFO: [receive message]:识别错误，识别区域中未识别出内容
+2022-01-17 21:41:37,315 - E:\recongnition\ServerWindow.py[line:88] - INFO: [receive message]:识别错误，识别区域中未识别出内容
+2022-01-17 21:41:42,468 - E:\recongnition\ServerWindow.py[line:88] - INFO: [receive message]:self.sock.write(datagram)
+2022-01-17 21:41:43,949 - E:\recongnition\ServerWindow.py[line:88] - INFO: [receive message]:self.sock.write(datagram)
+2022-01-17 21:41:44,624 - E:\recongnition\ServerWindow.py[line:88] - INFO: [receive message]:self.sock.write(datagram)
+2022-01-17 21:41:45,592 - E:\recongnition\ServerWindow.py[line:88] - INFO: [receive message]:self.sock.write(datagram)

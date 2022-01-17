@@ -74,7 +74,7 @@ class Ui_ServerWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Server"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Client"))
         self.label_4.setText(_translate("MainWindow", "已接收的字符串（展示最近接收）："))
         self.pushButton_2.setText(_translate("MainWindow", "识别"))
         self.pushButton_3.setText(_translate("MainWindow", "建立连接"))
