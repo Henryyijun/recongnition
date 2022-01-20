@@ -1,12 +1,12 @@
-from PyQt5.QtCore import pyqtSlot
-from PyQt5.QtWidgets import QWidget, QGraphicsPixmapItem, QGraphicsScene
-from PyQt5.QtWidgets import QMainWindow
+from PyQt5.QtCore import pyqtSlot, Qt
+from PyQt5.QtWidgets import QWidget, QGraphicsPixmapItem, QGraphicsScene,QMainWindow, QApplication, QDialog
+from PyQt5.QtGui import QGuiApplication
 from Ui_mainwindow import Ui_MainWindow
 from paddleocr import PaddleOCR
-from PIL import ImageGrab, Image
+from PIL import ImageGrab, Image, ImageQt
 import screen_capture
-import numpy
 import cv2
+import numpy
 import numpy as np
 from MyLogger import MyLogger
 from PyQt5.QtNetwork import QTcpServer, QHostAddress
@@ -26,14 +26,16 @@ class MainWindow(QMainWindow):
                              cls_model_dir=r'.\2.3.0.2\ocr\cls'
                              )
         self.kernel = np.array([[-1, -1, -1], [-1, 9, -1], [-1, -1, -1]], np.float32)
+
+        self.screen = QGuiApplication.screens()[-1]
         self.item = None
         self.scene = QGraphicsScene(self)
         self.log = MyLogger('MainWindowLog.txt')
         self.show()
         self.server = QTcpServer(self)
         # 建立连接
-        if not self.server.listen(QHostAddress(self.IP), self.PORT):
-            self.ui.textEdit.append(self.server.errorString())
+        # if not self.server.listen(QHostAddress(self.IP), self.PORT):
+        #     self.ui.textEdit.append(self.server.errorString())
         self.server.newConnection.connect(self.new_socket_slot)
 
     def write_data_slot(self):
@@ -107,7 +109,15 @@ class MainWindow(QMainWindow):
         img_rbg = None
         if self.bbox is not None:
             try:
-                img = ImageGrab.grab(self.bbox)
+                pscreen = QGuiApplication.primaryScreen()
+                screen = QGuiApplication.screens()[-1]
+                print(pscreen, screen)
+                dialog = QDialog()
+                dialog.setGeometry(screen.availableGeometry())
+                pix_img = screen.grabWindow(QApplication.desktop().winId(), self.bbox[0]+dialog.x(), self.bbox[1],
+                                                 self.bbox[2]-self.bbox[0], self.bbox[3]-self.bbox[1])
+                qimg = pix_img.toImage()
+                img = ImageQt.fromqimage(qimg)
                 img_rbg = numpy.asarray(img)
                 img = cv2.cvtColor(numpy.asarray(img), cv2.COLOR_RGB2GRAY)
                 img = cv2.medianBlur(img, 3)
