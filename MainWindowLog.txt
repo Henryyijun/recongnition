@@ -1,3 +1,0 @@
-2022-01-20 20:28:09,560 - E:\workplace\recognition_client_1\MainWindow.py[line:73] - INFO: 识别错误，用户未框选
-2022-01-20 20:28:09,999 - E:\workplace\recognition_client_1\MainWindow.py[line:73] - INFO: 识别错误，用户未框选
-2022-01-20 20:28:10,725 - E:\workplace\recognition_client_1\MainWindow.py[line:73] - INFO: 识别错误，用户未框选

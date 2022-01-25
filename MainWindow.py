@@ -1,9 +1,9 @@
-from PyQt5.QtCore import pyqtSlot, Qt
-from PyQt5.QtWidgets import QWidget, QGraphicsPixmapItem, QGraphicsScene,QMainWindow, QApplication, QDialog
+from PyQt5.QtCore import pyqtSlot
+from PyQt5.QtWidgets import QWidget, QGraphicsPixmapItem, QGraphicsScene, QMainWindow, QApplication, QDialog, QMessageBox
 from PyQt5.QtGui import QGuiApplication
 from Ui_mainwindow import Ui_MainWindow
 from paddleocr import PaddleOCR
-from PIL import ImageGrab, Image, ImageQt
+from PIL import Image, ImageQt
 import screen_capture
 import cv2
 import numpy
@@ -26,7 +26,6 @@ class MainWindow(QMainWindow):
                              cls_model_dir=r'.\2.3.0.2\ocr\cls'
                              )
         self.kernel = np.array([[-1, -1, -1], [-1, 9, -1], [-1, -1, -1]], np.float32)
-
         self.screen = QGuiApplication.screens()[-1]
         self.item = None
         self.scene = QGraphicsScene(self)
@@ -34,9 +33,26 @@ class MainWindow(QMainWindow):
         self.show()
         self.server = QTcpServer(self)
         # 建立连接
-        # if not self.server.listen(QHostAddress(self.IP), self.PORT):
-        #     self.ui.textEdit.append(self.server.errorString())
+        if not self.server.listen(QHostAddress(self.IP), self.PORT):
+            self.log.logger.info(self.server.errorString())
         self.server.newConnection.connect(self.new_socket_slot)
+        self.resize(QGuiApplication.primaryScreen().size()*2/5)
+        self.ui.graphicsView.setGeometry(self.geometry())
+        # print(self.ui.graphicsView.x())
+        # print(self.ui.graphicsView.y())
+        # print(self.ui.graphicsView.width())
+        # print(self.ui.graphicsView.height())
+
+    def closeEvent(self, event) -> None:
+        dialog = QMessageBox.question(self, '提示信息',
+                                            "是否要退出程序？",
+                                            QMessageBox.Yes | QMessageBox.No,
+                                            QMessageBox.No)
+
+        if dialog == QMessageBox.Yes:
+            event.accept()
+        else:
+            event.ignore()
 
     def write_data_slot(self):
         message = self.ui.lineEdit.text()
@@ -73,24 +89,6 @@ class MainWindow(QMainWindow):
             self.log.logger.info('识别错误，用户未框选')
 
     @pyqtSlot()
-    def on_pushButton_3_clicked(self):
-        '''
-        停止识别按钮
-        :return:
-        '''
-        self.bbox = None
-
-    @pyqtSlot()
-    def on_pushButton_4_clicked(self):
-        '''
-        发送按钮
-        :return:
-        '''
-        # txt = self.ui.lineEdit.text()
-        # self.send_texts(txt)
-        self.write_data_slot()
-
-    @pyqtSlot()
     def on_pushButton_5_clicked(self):
         '''
         返回登录按钮
@@ -111,7 +109,6 @@ class MainWindow(QMainWindow):
             try:
                 pscreen = QGuiApplication.primaryScreen()
                 screen = QGuiApplication.screens()[-1]
-                print(pscreen, screen)
                 dialog = QDialog()
                 dialog.setGeometry(screen.availableGeometry())
                 pix_img = screen.grabWindow(QApplication.desktop().winId(), self.bbox[0]+dialog.x(), self.bbox[1],
@@ -132,20 +129,22 @@ class MainWindow(QMainWindow):
         return txts, img_rbg
 
     def show_image(self, image):
+
         width = image.shape[1]
         height = image.shape[0]
-        self.scene.clear()
-        self.ui.graphicsView.clearFocus()
-        # width = 400
-        # height = 200
-        print(type(image))
-        print(image.shape)
-        im = Image.fromarray(image)
-        pix = im.toqpixmap()
-        self.item = QGraphicsPixmapItem(pix)
-        self.scene.addItem(self.item)
-        self.ui.graphicsView.setScene(self.scene)
-        self.scene.update()
+        if width > self.ui.graphicsView.width() or height > self.ui.graphicsView.height():
+            self.log.logger.error("显示图片失败")
+        else:
+            self.scene.clear()
+            self.ui.graphicsView.clearFocus()
+            im = Image.fromarray(image)
+            pix = im.toqpixmap()
+            self.item = QGraphicsPixmapItem(pix)
+            self.scene.addItem(self.item)
+            self.ui.graphicsView.setScene(self.scene)
+            self.scene.update()
+
+
 
     def new_socket_slot(self):
         self.sock = self.server.nextPendingConnection()
