@@ -122,11 +122,12 @@ class MainWindow(QMainWindow):
                 img = cv2.filter2D(img, -1, kernel=self.kernel)
                 result = self.ocr.ocr(img, cls=True)
                 txts = [line[1][0] for line in result]
-                print(txts)
+                self.log.logger.info("识别成功,识别结果为：%s" % ("".join(txts)))
+
             except Exception as e:
                 self.log.logger.error("识别失败")
         else:
-            print('未框选')
+            self.log.logger.error("未框选")
         return txts, img_rbg
 
     def show_image(self, image):
