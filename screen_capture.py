@@ -33,12 +33,10 @@ class CaptureScreen(QWidget):
         # 截下当前屏幕的图像
         screen = QGuiApplication.screens()[-1]
         # self.load_pixmap = QGuiApplication.primaryScreen().grabWindow(QApplication.desktop().winId())
-        print(screen.geometry())
         dialog = QDialog()
         dialog.setGeometry(screen.geometry())
         self.load_pixmap = screen.grabWindow(QApplication.desktop().winId(), dialog.x(), dialog.y(),
                                              dialog.width(), dialog.height())
-        print('woca ', dialog.x(), '  ', dialog.y(), ' ', dialog.width(), ' ', dialog.height())
         self.screen_width = self.load_pixmap.width()
         self.screen_height = self.load_pixmap.height()
 

@@ -35,9 +35,10 @@ class MainWindow(QMainWindow):
         # 建立连接
         if not self.server.listen(QHostAddress(self.IP), self.PORT):
             self.log.logger.info(self.server.errorString())
+        self.log.logger.info("正在监听端口：%d" % (self.PORT))
         self.server.newConnection.connect(self.new_socket_slot)
         self.resize(QGuiApplication.primaryScreen().size()*2/5)
-        self.ui.graphicsView.setGeometry(self.geometry())
+        # self.ui.graphicsView.setGeometry(self.geometry())
         # print(self.ui.graphicsView.x())
         # print(self.ui.graphicsView.y())
         # print(self.ui.graphicsView.width())
@@ -70,7 +71,7 @@ class MainWindow(QMainWindow):
     def on_pushButton_clicked(self):
         self.capture = screen_capture.CaptureScreen()
         self.capture.signal_complete_capture.connect(self.get_box)
-        print('选取')
+        self.log.logger.info("选取区域中")
 
     @pyqtSlot()
     def on_pushButton_2_clicked(self):
@@ -123,7 +124,7 @@ class MainWindow(QMainWindow):
                 txts = [line[1][0] for line in result]
                 print(txts)
             except Exception as e:
-                print(e)
+                self.log.logger.error("识别失败")
         else:
             print('未框选')
         return txts, img_rbg
